@@ -1,0 +1,80 @@
+﻿@page "{id:int?}"
+@model VitecovitchFinale.Pages.Customers.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Customer</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Customer.ID" />
+            <div class="form-group">
+                <label asp-for="Customer.CustomerName" class="control-label"></label>
+                <input asp-for="Customer.CustomerName" class="form-control" />
+                <span asp-validation-for="Customer.CustomerName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Customer.TelephoneNumber" class="control-label"></label>
+                <input asp-for="Customer.TelephoneNumber" class="form-control" />
+                <span asp-validation-for="Customer.TelephoneNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Customer.Email" class="control-label"></label>
+                <input asp-for="Customer.Email" class="form-control" />
+                <span asp-validation-for="Customer.Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Customer.Address" class="control-label"></label>
+                <input asp-for="Customer.Address" class="form-control" />
+                <span asp-validation-for="Customer.Address" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Customer.StartDate" class="control-label"></label>
+                <input asp-for="Customer.StartDate" class="form-control" />
+                <span asp-validation-for="Customer.StartDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Customer.Cpr" class="control-label"></label>
+                <input asp-for="Customer.Cpr" class="form-control" />
+                <span asp-validation-for="Customer.Cpr" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Customer.Subscribtion" class="control-label"></label>
+                <input asp-for="Customer.Subscribtion" class="form-control" />
+                <span asp-validation-for="Customer.Subscribtion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Customer.Price" class="control-label"></label>
+                <input asp-for="Customer.Price" class="form-control" />
+                <span asp-validation-for="Customer.Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Customer.RegNr" class="control-label"></label>
+                <input asp-for="Customer.RegNr" class="form-control" />
+                <span asp-validation-for="Customer.RegNr" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Customer.KontoNr" class="control-label"></label>
+                <input asp-for="Customer.KontoNr" class="form-control" />
+                <span asp-validation-for="Customer.KontoNr" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

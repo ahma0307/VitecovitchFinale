@@ -1,0 +1,99 @@
+﻿@page
+@model VitecovitchFinale.Pages.Customers.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<form>
+    <p>
+        <select asp-for="CustomerSubscribtion" asp-items="Model.Subscribtions">
+            <option value="">All</option>
+        </select>
+        Customer Name: <input type="text" asp-for="SearchString" />
+        <input type="submit" value="Filter" />
+    </p>
+</form>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Customer[0].CustomerName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Customer[0].TelephoneNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Customer[0].Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Customer[0].Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Customer[0].StartDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Customer[0].Cpr)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Customer[0].Subscribtion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Customer[0].Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Customer[0].RegNr)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Customer[0].KontoNr)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Customer) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TelephoneNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StartDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cpr)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Subscribtion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RegNr)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KontoNr)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
